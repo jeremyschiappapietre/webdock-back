@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Questions - Réponses [Webdoc-Blockchain]{% endblock %}
+
+{% block body %}
+    <h1 style='text-align:center; font-size:2em;margin-top:8px;margin-bottom:32px;'>Questions - Réponses [Webdoc-Blockchain]</h1>
+
+    <table class="table" style='width:70%;margin-left:15%;'>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Questions</th>
+                <th>Actions Questions</th>
+                <th></th>
+                <th>Actions Réponses</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for question in questions %}
+            <tr>
+                <td>{{ question.id }}</td>
+                <td>{{ question.question }}</td>
+                <td>
+                    <a href="{{ path('questions_edit', {'id': question.id}) }}">Modifier </a>
+                </td>
+                <td></td>
+                <td>
+                    <a href="{{ path('responses_show', {'id': question.id}) }}">Voir | </a>
+                    <a href="{{ path('responses_edit', {'id': question.id}) }}">Modifier </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

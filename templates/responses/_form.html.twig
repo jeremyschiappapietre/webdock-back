@@ -1,0 +1,9 @@
+{{ form_start(form) }}
+<div style='text-align:center;width:60%;margin-left: 20%;'>
+
+    {{ form_widget(form) }}
+    <div style='border:1px solid black; border-radius:4em;width:10%;background-color:black;margin-left:45%;margin-bottom:32px;'>
+         <button class="btn" style='color:green;text-align:center;'>{{ button_label|default('Save') }}</button>
+    </div>
+{{ form_end(form) }}
+</div>

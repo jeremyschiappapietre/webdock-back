@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit - Response {{response.id}}{% endblock %}
+
+{% block body %}
+    <div style='text-align:center;'>
+    <h1>Éditer les réponses de la question {{response.id}}</h1>
+    <p>Veuillez mettre la bonne réponse dans "Response 1"</p>
+
+    {{ include('responses/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('questions_index') }}">Revenir en arrière</a>
+    </div>
+{% endblock %}

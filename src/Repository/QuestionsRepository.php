@@ -3,8 +3,11 @@
 namespace App\Repository;
 
 use App\Entity\Questions;
+use App\Entity\Responses;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query\Expr\Join;
+use Doctrine\ORM\Query\ResultSetMapping;
 
 /**
  * @method Questions|null find($id, $lockMode = null, $lockVersion = null)
@@ -18,6 +21,32 @@ class QuestionsRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Questions::class);
     }
+
+
+    public function findById($params)
+    {
+         $qb =  $this->createQueryBuilder('b')
+             ->select("
+                 b.id,
+                 b.response_1,
+                 b.response_2,
+                 b.response_3,
+                 b.response_4,")
+             ->where("b.id = :id")
+             ->setParameters($params)
+             ->getQuery();
+
+        //  $qb =  $this->createQueryBuilder('b')
+        //  ->addSelect('o')
+        // ->select("*")
+        // ->innerJoin('App\Entity\Responses', 'o',   Expr\Join::WITH,  'b.id = o.id')
+        //  ->setParameters()
+        // ->getQuery();
+
+ 
+    }
+   
+
 
     // /**
     //  * @return Questions[] Returns an array of Questions objects

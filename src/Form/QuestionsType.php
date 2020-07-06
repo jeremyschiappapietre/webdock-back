@@ -12,10 +12,7 @@ class QuestionsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('question1')
-            ->add('question2')
-            ->add('question3')
-            ->add('question4')
+            ->add('question')
         ;
     }
 

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}View - Response {{response.id}}{% endblock %}
+
+{% block body %}
+    <div style='text-align:center;'>
+        <h1>Résultats de la question {{response.id}}</h1>
+    </div>
+        <table class="table" style='width:50%;margin-left:25%;margin-top:32px;'>
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ response.id }}</td>
+                </tr>
+                <tr>
+                    <th>Response_1</th>
+                    <td>{{ response.response1 }}</td>
+                </tr>
+                <tr>
+                    <th>Response_2</th>
+                    <td>{{ response.response2 }}</td>
+                </tr>
+                <tr>
+                    <th>Response_3</th>
+                    <td>{{ response.response3 }}</td>
+                </tr>
+                <tr>
+                    <th>Response_4</th>
+                    <td>{{ response.response4 }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('questions_index') }}" style='margin-left:50%;'>Revenir en arrière</a>
+
+
+    
+{% endblock %}

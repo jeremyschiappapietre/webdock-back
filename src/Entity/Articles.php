@@ -22,38 +22,38 @@ class Articles
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $titre;
+    private $name_chapter;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $contenu;
+    private $content_chapter;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitre(): ?string
+    public function getNameChapter(): ?string
     {
-        return $this->titre;
+        return $this->name_chapter;
     }
 
-    public function setTitre(string $titre): self
+    public function setNameChapter(string $name_chapter): self
     {
-        $this->titre = $titre;
+        $this->name_chapter = $name_chapter;
 
         return $this;
     }
 
-    public function getContenu(): ?string
+    public function getContentChapter(): ?string
     {
-        return $this->contenu;
+        return $this->content_chapter;
     }
 
-    public function setContenu(string $contenu): self
+    public function setContentChapter(string $content_chapter): self
     {
-        $this->contenu = $contenu;
+        $this->content_chapter = $content_chapter;
 
         return $this;
     }

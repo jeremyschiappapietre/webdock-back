@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Responses index{% endblock %}
+
+{% block body %}
+    <h1>Responses index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Response_1</th>
+                <th>Response_2</th>
+                <th>Response_3</th>
+                <th>Response_4</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for response in responses %}
+            <tr>
+                <td>{{ response.id }}</td>
+                <td>{{ response.response1 }}</td>
+                <td>{{ response.response2 }}</td>
+                <td>{{ response.response3 }}</td>
+                <td>{{ response.response4 }}</td>
+                <td>
+                    <a href="{{ path('responses_show', {'id': response.id}) }}">show</a>
+                    <a href="{{ path('responses_edit', {'id': response.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('responses_new') }}">Create new</a>
+{% endblock %}

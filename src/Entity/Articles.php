@@ -29,6 +29,16 @@ class Articles
      */
     private $content_chapter;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $title_chapter;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $textButton_chapter;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -54,6 +64,30 @@ class Articles
     public function setContentChapter(string $content_chapter): self
     {
         $this->content_chapter = $content_chapter;
+
+        return $this;
+    }
+
+    public function getTitleChapter(): ?string
+    {
+        return $this->title_chapter;
+    }
+
+    public function setTitleChapter(string $title_chapter): self
+    {
+        $this->title_chapter = $title_chapter;
+
+        return $this;
+    }
+
+    public function getTextButtonChapter(): ?string
+    {
+        return $this->textButton_chapter;
+    }
+
+    public function setTextButtonChapter(string $textButton_chapter): self
+    {
+        $this->textButton_chapter = $textButton_chapter;
 
         return $this;
     }

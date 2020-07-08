@@ -23,7 +23,7 @@ class QuestionsRepository extends ServiceEntityRepository
     }
 
 
-    public function findById()
+    public function findById($params)
     {
          $qb =  $this->createQueryBuilder('b')
              ->select("
@@ -33,7 +33,7 @@ class QuestionsRepository extends ServiceEntityRepository
                  b.response_3,
                  b.response_4,")
              ->where("b.id = :id")
-             ->setParameters()
+             ->setParameters($params)
              ->getQuery();
 
         //  $qb =  $this->createQueryBuilder('b')

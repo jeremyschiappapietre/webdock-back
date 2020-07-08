@@ -7,7 +7,16 @@ use App\Repository\ArticlesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *  collectionOperations={
+ *      "get"={},
+ *      "post"={},
+ *  },
+ *  itemOperations={
+ *      "get"={},
+ *      "put"={},
+ *  }
+ * )
  * @ORM\Entity(repositoryClass=ArticlesRepository::class)
  */
 class Articles

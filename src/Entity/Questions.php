@@ -7,7 +7,15 @@ use App\Repository\QuestionsRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource()
+ *@ApiResource(
+ *  collectionOperations={
+ *      "get"={},
+ *  },
+ *  itemOperations={
+ *      "get"={},
+ *      "put"={},
+ *  }
+ * )
  * @ORM\Entity(repositoryClass=QuestionsRepository::class)
  */
 class Questions

@@ -7,7 +7,16 @@ use App\Repository\HomeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource()
+ *@ApiResource(
+ *  collectionOperations={
+ *      "get"={},
+ *      "post"={},
+ *  },
+ *  itemOperations={
+ *      "get"={},
+ *      "put"={},
+ *  }
+ * )
  * @ORM\Entity(repositoryClass=HomeRepository::class)
  */
 class Home

@@ -23,10 +23,10 @@ class QuestionsController extends AbstractController
      */
     public function index(QuestionsRepository $questionsRepository , ResponsesRepository $responses)
     {
-        $params= ['id1' => '1' , 'id2' => '2'];
+        
         return $this->render('questions/index.html.twig', [
             // 'questions' => $questionsRepository->findAll(),
-            'responses' => $responses->findById($params),
+            'responses' => $responses->findById(),
             'questions' => $questionsRepository->findAll(),
 
         ]);
